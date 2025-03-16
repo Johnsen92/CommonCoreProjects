@@ -16,15 +16,14 @@ int	count_words(char *str, char c)
 	int	words;
 
 	i = 0;
-	words = 0;
+	words = 1;
 	while (str[i])
 	{
-		while (str[i] == c && str[i] != '\0')
-			i++;
-		if (str[i] != '\0')
+		if (str[i] == c)
 		{
 			words++;
-			while (str[i] != '\0' && str[i] != c)
+			i++;
+			while (str[i] == c)
 				i++;
 		}
 	}
